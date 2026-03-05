@@ -1,0 +1,37 @@
+{
+  "displayName": "SeekReap Services Dashboard",
+  "gridLayout": {
+    "widgets": [
+      {
+        "title": "Tier-4 Orchestrator Requests",
+        "xyChart": {
+          "dataSets": [{
+            "timeSeriesQuery": {
+              "timeSeriesFilter": "metric.type=\"run.googleapis.com/request_count\" resource.type=\"cloud_run_revision\" resource.label.\"service_name\"=\"seekreap-tier4\""
+            }
+          }]
+        }
+      },
+      {
+        "title": "Tier-3 Core Engine Requests",
+        "xyChart": {
+          "dataSets": [{
+            "timeSeriesQuery": {
+              "timeSeriesFilter": "metric.type=\"run.googleapis.com/request_count\" resource.type=\"cloud_run_revision\" resource.label.\"service_name\"=\"seekreap-tier3\""
+            }
+          }]
+        }
+      },
+      {
+        "title": "Tier-5 Backend Requests",
+        "xyChart": {
+          "dataSets": [{
+            "timeSeriesQuery": {
+              "timeSeriesFilter": "metric.type=\"run.googleapis.com/request_count\" resource.type=\"cloud_run_revision\" resource.label.\"service_name\"=\"seekreap-backend\""
+            }
+          }]
+        }
+      }
+    ]
+  }
+}

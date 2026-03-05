@@ -1,0 +1,41 @@
+                   List of relations
+ Schema |         Name          | Type  |    Owner     
+--------+-----------------------+-------+--------------
+ public | analytics_snapshots   | table | neondb_owner
+ public | appeal_evidence       | table | neondb_owner
+ public | appeal_outcomes       | table | neondb_owner
+ public | appeal_status_history | table | neondb_owner
+ public | appeal_submissions    | table | neondb_owner
+ public | appeals               | table | neondb_owner
+ public | audit_logs            | table | neondb_owner
+ public | content_results       | table | neondb_owner
+ public | content_revisions     | table | neondb_owner
+ public | content_submissions   | table | neondb_owner
+ public | creator_profiles      | table | neondb_owner
+ public | creators              | table | neondb_owner
+ public | enforcement_actions   | table | neondb_owner
+ public | feedback              | table | neondb_owner
+ public | fix_suggestions       | table | neondb_owner
+ public | flagged_issues        | table | neondb_owner
+ public | flagged_segments      | table | neondb_owner
+ public | job_audit             | table | neondb_owner
+ public | job_audit_log         | table | neondb_owner
+ public | job_queue             | table | neondb_owner
+ public | legal_escalations     | table | neondb_owner
+ public | oauth_accounts        | table | neondb_owner
+ public | pgq_job               | table | neondb_owner
+ public | pgqueuer              | table | neondb_owner
+ public | pgqueuer_log          | table | neondb_owner
+ public | pgqueuer_schedules    | table | neondb_owner
+ public | pgqueuer_statistics   | table | neondb_owner
+ public | platform_policies     | table | neondb_owner
+ public | platform_scans        | table | neondb_owner
+ public | policy_checks         | table | neondb_owner
+ public | reports               | table | neondb_owner
+ public | submission_results    | table | neondb_owner
+ public | submissions           | table | neondb_owner
+ public | task_queue            | table | neondb_owner
+ public | usage_logs            | table | neondb_owner
+ public | users                 | table | neondb_owner
+(36 rows)
+

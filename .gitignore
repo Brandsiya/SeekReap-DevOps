@@ -1,0 +1,28 @@
+# Logs
+logs/
+*.log
+
+# Backups
+backups/
+*.sql.gz
+*.backup
+
+# Environment
+.env
+*.env
+.DS_Store
+
+# Local config
+*.local
+config/local/
+
+# Secrets
+**/secrets/
+**/*.key
+**/*.pem
+
+# Large files
+*.mp4
+*.mov
+*.zip
+*.tar.gz

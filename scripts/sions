@@ -1,0 +1,32 @@
+                                             Table "public.job_queue"
+     Column      |            Type             | Collation | Nullable |                  Default                  
+-----------------+-----------------------------+-----------+----------+-------------------------------------------
+ job_id          | integer                     |           | not null | nextval('job_queue_job_id_seq'::regclass)
+ creator_id      | integer                     |           | not null | 
+ content_id      | text                        |           | not null | 
+ job_type        | text                        |           | not null | 
+ params          | jsonb                       |           |          | '{}'::jsonb
+ status          | text                        |           |          | 'pending'::text
+ started_at      | timestamp without time zone |           |          | 
+ completed_at    | timestamp without time zone |           |          | 
+ failure_reason  | text                        |           |          | 
+ created_at      | timestamp without time zone |           |          | now()
+ submission_id   | uuid                        |           |          | 
+ redis_job_id    | character varying(64)       |           |          | 
+ processing_host | character varying(255)      |           |          | 
+ attempts        | integer                     |           |          | 0
+ result          | jsonb                       |           |          | 
+ retry_limit     | integer                     |           |          | 5
+Indexes:
+    "job_queue_pkey" PRIMARY KEY, btree (job_id)
+    "idx_job_queue_attempts" btree (attempts)
+    "idx_job_queue_job_id" btree (job_id)
+    "idx_job_queue_perf" btree (status, created_at)
+    "idx_job_queue_redis" btree (redis_job_id)
+    "idx_job_queue_status" btree (status)
+    "idx_job_queue_submission" btree (submission_id)
+Foreign-key constraints:
+    "job_queue_submission_id_fkey" FOREIGN KEY (submission_id) REFERENCES content_submissions(submission_id)
+Referenced by:
+    TABLE "content_results" CONSTRAINT "content_results_job_id_fkey" FOREIGN KEY (job_id) REFERENCES job_queue(job_id)
+

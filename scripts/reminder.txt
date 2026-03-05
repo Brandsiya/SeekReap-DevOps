@@ -1,0 +1,14 @@
+
+Run these maintenance tasks manually:
+
+  ~/SeekReap-DevOps/scripts/auto_tune_runner.sh
+
+  psql $DATABASE_URL -c "VACUUM ANALYZE;"
+
+  ~/SeekReap-DevOps/logs/
+
+To view last maintenance:
+  ls -la ~/SeekReap-DevOps/logs/maintenance_report_*
+
+To view latest report:
+  cat ~/SeekReap-DevOps/logs/maintenance_report_$(date +%Y%m%d).txt

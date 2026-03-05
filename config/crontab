@@ -1,0 +1,13 @@
+# SeekReap Automated Maintenance
+
+# Weekly database tune-up (Sunday 12:05 AM)
+5 0 * * 0 /home/userland/SeekReap-DevOps/scripts/db_autotune_enhanced.sh >> /home/userland/SeekReap-DevOps/logs/cron.log 2>&1
+
+# Daily health check (2 AM)
+0 2 * * * psql $DATABASE_URL -f /home/userland/SeekReap-DevOps/schemas/health_check_comprehensive.sql >> /home/userland/SeekReap-DevOps/logs/health.log 2>&1
+
+# Monthly vacuum (1st day, 3 AM)
+0 3 1 * * psql $DATABASE_URL -c "VACUUM ANALYZE;" >> /home/userland/SeekReap-DevOps/logs/vacuum.log 2>&1
+
+# Stalled job check every 15 minutes
+*/15 * * * * psql $DATABASE_URL -f /home/userland/SeekReap-DevOps/schemas/check_stalled_jobs_fixed.sql >> /home/userland/SeekReap-DevOps/logs/stalled.log 2>&1
