@@ -1,3 +1,4 @@
+```markdown
 # 🚀 SeekReap-DevOps
 
 Enterprise-grade infrastructure management for SeekReap's Pre-Flag Minimization service. This repository contains all deployment scripts, database schemas, monitoring tools, and automation for the entire SeekReap platform.
