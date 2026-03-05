@@ -156,25 +156,3 @@ Copyright © 2026 SeekReap. All rights reserved.
 ⭐ Star this repo if you find it useful!
 
 ```
-
-## 📋 **Instructions for nano:**
-
-1. **You're already in nano** (I can see the cursor)
-2. **Delete any existing content** (Ctrl+K to delete lines, or hold Backspace)
-3. **Paste the entire content above** (Ctrl+Shift+V or right-click paste)
-4. **Save and exit**: Press `Ctrl+X`, then `Y`, then `Enter`
-
-## 🚀 **After saving, commit and push:**
-
-```bash
-# Add the README
-git add README.md
-
-# Commit
-git commit -m "docs: Add comprehensive README"
-
-# Push to GitHub
-git push origin main
-
-echo "✅ README updated and pushed!"
-```
